@@ -1,0 +1,216 @@
+/* Profe, si ve muchos comentarios no es porque este hecho
+con ia es que voy apuntandome cosas (aunque ya las sepa) para acordarme bien por las dudas */
+
+/* Se recetea la pagina para que no molesten los navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colores de Nacional, creamos las variables de los colores para usarlas en todo el proyecto */
+:root {
+    --azul-bolso: #002855;
+    --rojo-bolso: #D50032;
+    --blanco: #FFFFFF;
+    --gris-fondo: #F0F2F5;
+    --gris-suave: #E9ECEF;
+    --texto-oscuro: #333333;
+    --texto-gris: #667781;
+}
+
+/* etiqueta sin nada afecta a todos los de ese tipo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gris-fondo);
+    color: var(--texto-oscuro);
+    height: 100vh;
+    overflow: hidden;
+}
+
+#pantalla-bienvenida {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+/* Contenedor principal, # para una id en especifico */
+#principal {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+aside {
+    width: 350px; /*ancho de la columna */
+    background-color: var(--blanco); /* Color de fondo */
+    border-right: 1px solid var(--gris-suave); /* Borde derecho */
+    display: flex; /* es un flexbox para que se acomode cuando luego lo haga responsive, o para que acomode lo de adentro */
+    flex-direction: column; /* y por ultimo hace que se acomoden en forma de columna */
+}
+
+/* main seria todo lo de la derecha, todo junto */
+main {
+    display: flex;
+    flex: 1; /* Ocupa todo el espacio restante al lado del aside */
+    background-color: var(--gris-fondo); 
+    flex-direction: column;
+}
+
+/* . para clases, todos los que compartan la clase toman este diseño */
+.contenido-bienvenida img{
+    max-width: 200px; /* ancho maximo */
+    margin-bottom: 20px; /* margen abajo */
+    
+}
+
+.contenido-bienvenida h2{
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--azul-bolso);
+}
+
+.contenido-bienvenida p{
+    font-size: 16px; /* tamaño de la letra */
+    color: var(--texto-oscuro);
+}
+
+/* diseño header*/
+aside header {
+    background-color: var(--azul-bolso); /* Color de fondo */
+    color: var(--blanco); /* Color de la letra */
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold; /* negrita */
+    text-align: center; /* centrado */
+}
+
+aside input[type="text"]{
+    padding: 10px;
+    margin: 10px auto;
+    outline: none; /* saca el borde azul */
+    border: 1px solid var(--gris-suave); /* Borde derecho */
+    border-radius: 15px; /* Borde redondeado */
+    font-size: 14px; /* tamaño de la letra */
+    width: 90%; /* ancho completo */
+}
+
+#chats{
+    flex: 1;
+    overflow-y: auto; /* scroll si hay muchos chats */
+}
+
+.chat {
+    display: flex;
+    padding: 10px;
+    cursor: pointer; /*la manito*/
+    border-bottom: 1px solid var(--gris-suave);
+    transition: background-color 0.2s ease; /* transition para que tenga una animacion cuando cambie el color*/
+}
+
+.chat:hover {
+    background-color: var(--gris-suave);
+}
+
+.chat img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat .info{
+    flex: 1;
+}
+
+.chat .info h3{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--azul-bolso);
+}
+
+.chat .info p{
+    font-size: 14px;
+    color: var(--texto-gris);
+}
+
+main header {
+    background-color: var(--blanco);
+    padding: 15px;
+    border-bottom: 1px solid var(--gris-suave);
+    display: flex;
+    align-items: center;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;   
+}
+
+.encabezado img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.encabezado h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--azul-bolso);
+}
+
+#mensajes {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.mensaje {
+    background-color: var(--azul-bolso);
+    color: var(--blanco);
+    padding: 15px;
+    border-radius: 18px;
+    max-width: 70%; /* el ancho maximo que ocupa el mensaje*/
+    margin-bottom: 10px; 
+    word-wrap: break-word; /*rompe la palabra (para que no se salga de la pantalla)*/
+    align-self: flex-start; /*pone el mensaje al inicio (a la izquierda)*/
+}
+
+#input {
+    display: flex; /*para que tenga los elementos en una linea*/
+    padding: 10px;
+    border-top: 1px solid var(--gris-suave);
+    align-items: center;
+}
+
+.upload-btn{
+    font-size: 24px; /* tamaño de la letra */
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#mensaje_input{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--azul-bolso);
+    border-radius: 15px;
+    outline: none;
+}
+
+#enviar_btn{
+    background-color: var(--rojo-bolso);
+    color: var(--blanco);
+    border:none;
+    border-radius: 15px;
+    padding: 10px;
+    margin-left:10px;
+    cursor:pointer;
+    font-weight: bold; /* negrita */
+}
+
+#enviar_btn:hover {
+    background-color: var(--azul-bolso);
+}

@@ -3,9 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BolsoChat</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <!-- Aca es donde se pone todo -->
+    <div id="principal">
+        <!--izquierda, la columna de los contactos -->
+        <aside>
+            <header>BolsoChat</header>
+            <input type="text" placeholder="Buscar">
+            <div id="chats">
+                <div class="chat">
+                    <img src="" alt="">
+                    <div class="info">
+                        <h3>Nombre</h3>
+                        <p>mensaje</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--pantalla de bienvenida hasta que selecciona un mensaje -->
+        <div id="pantalla-bienvenida">
+            <div class="contenido-bienvenida">
+                <img src="resources/logo_letras_Nacional.png" alt="Escudo Nacional" class="logo-bienvenida">
+                <h2>¡Bienvenido a BolsoChat!</h2>
+                <p>Selecciona una conversación de la izquierda para empezar a chatear. Se mas rapido que el galgo Villalba en recibir tus mensajes.</p>
+            </div>
+        </div>
+        <!-- Pantalla de chat activo -->
+        <main id="chat-activo">
+            <header>
+                <div class="encabezado">
+                    <img src="" alt="">
+                    <h3>Nombre</h3>
+                </div>
+            </header>
+            <div id="mensajes">
+                <div class="mensaje">
+                    <p>mensaje</p>
+                </div>
+            </div>
+            <div id="input">
+                <input type="file" id="imagen-selector" accept="image/*" style="display: none;">
+                <label for="imagen-selector" class="upload-btn">
+                    📎
+                </label>
+                <input id="mensaje_input" type="text" placeholder="Escribe un mensaje...">
+                <button id="enviar_btn">Enviar</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
