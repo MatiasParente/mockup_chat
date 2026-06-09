@@ -9,6 +9,8 @@
 <body>
     <!-- Aca es donde se pone todo -->
     <div id="principal">
+        <div id="titulo">BOLSO CHAT</div>
+        <div id="BolsoChat">
         <!--izquierda, la columna de los contactos -->
         <aside>
             <header>BolsoChat</header>
@@ -17,8 +19,11 @@
                 <div class="chat">
                     <img src="" alt="">
                     <div class="info">
-                        <h3>Nombre</h3>
-                        <p>mensaje</p>
+                        <div class="info_superior">
+                            <h3>Nombre</h3>
+                            <span class="hora">hora</span>
+                        </div>
+                        <p id="ultMensaje">mensaje</p>
                     </div>
                 </div>
             </div>
@@ -42,6 +47,7 @@
             <div id="mensajes">
                 <div class="mensaje">
                     <p>mensaje</p>
+                    <p class="hora2">hora</p>
                 </div>
             </div>
             <div id="input">
@@ -53,6 +59,7 @@
                 <button id="enviar_btn">Enviar</button>
             </div>
         </main>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>

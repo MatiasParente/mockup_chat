@@ -28,6 +28,29 @@ body {
     overflow: hidden;
 }
 
+#titulo{
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--azul-bolso);
+    background-color: var(--blanco);
+    border-bottom: 1px solid var(--gris-suave);
+}
+
+#BolsoChat{
+    display: flex;
+    height: 80vh;
+    width: 75%;
+    margin: 0 auto;
+    border: 2px solid var(--azul-bolso);
+    justify-content: center;
+    margin-top: 30px;
+}
+
 #pantalla-bienvenida {
     display: flex;
     flex-direction: column;
@@ -39,6 +62,7 @@ body {
 /* Contenedor principal, # para una id en especifico */
 #principal {
     display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 100%;
 }
@@ -52,8 +76,8 @@ aside {
 }
 
 /* main seria todo lo de la derecha, todo junto */
-main {
-    display: flex;
+#chat-activo {
+    display: none;
     flex: 1; /* Ocupa todo el espacio restante al lado del aside */
     background-color: var(--gris-fondo); 
     flex-direction: column;
@@ -72,16 +96,32 @@ main {
     color: var(--azul-bolso);
 }
 
-.contenido-bienvenida p{
+#ultMensaje{
     font-size: 16px; /* tamaño de la letra */
     color: var(--texto-oscuro);
 }
 
+.linea-superior{
+    display: flex; /* para que tenga los elementos en una linea*/
+    justify-content: space-between; /*para que haya espacio entre los elementos*/
+}
+
+.hora{
+    font-size: 12px; /* tamaño de la letra */
+    color: var(--texto-gris);
+}
+.hora2{
+    font-size: 10px;
+    color: var(--gris-suave);
+    display: block; /*ocupa toda la línea abajo del texto */
+    text-align: right;/*alineamos el texto a la derecha del globo */
+    margin-top: 5px;
+}
 /* diseño header*/
 aside header {
     background-color: var(--azul-bolso); /* Color de fondo */
     color: var(--blanco); /* Color de la letra */
-    padding: 15px;
+    padding: 23px;
     font-size: 18px;
     font-weight: bold; /* negrita */
     text-align: center; /* centrado */
@@ -164,6 +204,8 @@ main header {
 
 #mensajes {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     overflow-y: auto;
 }
@@ -176,13 +218,43 @@ main header {
     max-width: 70%; /* el ancho maximo que ocupa el mensaje*/
     margin-bottom: 10px; 
     word-wrap: break-word; /*rompe la palabra (para que no se salga de la pantalla)*/
+    align-self: flex-start; /*pone el mensaje al inicio (a la izquierda), tiene que ser hijo de un flexbox*/
+}
+
+.mensaje-enviado {
+    background-color: var(--rojo-bolso);
+    color: var(--blanco);
+    padding: 15px;
+    border-radius: 18px;
+    max-width: 70%; /* el ancho maximo que ocupa el mensaje*/
+    margin-bottom: 10px; 
+    word-wrap: break-word;
+    align-self: flex-end; /*pone el mensaje al final (a la derecha)*/
+}
+
+.mensaje-recibido {
+    background-color: var(--azul-bolso);
+    color: var(--blanco);
+    padding: 15px;
+    border-radius: 18px;
+    max-width: 70%; /* el ancho maximo que ocupa el mensaje*/
+    margin-bottom: 10px; 
+    word-wrap: break-word;
     align-self: flex-start; /*pone el mensaje al inicio (a la izquierda)*/
+}
+
+.mensaje-enviado img,
+.mensaje-recibido img{
+    max-width: 100%;
+    border-radius: 18px;
+    margin-top: 5px;
+    display: block;
+    height: auto;
 }
 
 #input {
     display: flex; /*para que tenga los elementos en una linea*/
     padding: 10px;
-    border-top: 1px solid var(--gris-suave);
     align-items: center;
 }
 
