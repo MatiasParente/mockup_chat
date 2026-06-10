@@ -8,7 +8,7 @@ const fotosJugadores = {
     "marialopez_4567": "resources/atilio.jpg",
     "anagomez_7890": "resources/coates.jpeg",
     "carlosrodriguez_1122": "resources/maxi.jpeg",
-    "lauragarcia_3344": "resources/coates.jpeg"
+    "lauragarcia_3344": "resources/ebere.jpeg"
 };
 
 function obtenerFotoPerfil(idContacto){
