@@ -126,16 +126,16 @@ aside header {
     font-weight: bold; /* negrita */
     text-align: center; /* centrado */
 }
-
+/*
 aside input[type="text"]{
     padding: 10px;
     margin: 10px auto;
-    outline: none; /* saca el borde azul */
-    border: 1px solid var(--gris-suave); /* Borde derecho */
-    border-radius: 15px; /* Borde redondeado */
-    font-size: 14px; /* tamaño de la letra */
-    width: 90%; /* ancho completo */
-}
+    outline: none; /* saca el borde azul
+    border: 1px solid var(--gris-suave); /* Borde derecho
+    border-radius: 15px; /* Borde redondeado 
+    font-size: 14px; /* tamaño de la letra 
+    width: 90%; /* ancho completo 
+}*/
 
 #chats{
     flex: 1;
@@ -285,4 +285,63 @@ main header {
 
 #enviar_btn:hover {
     background-color: var(--azul-bolso);
+}
+
+.boton-volver{
+    background-color: var(--blanco);
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.boton-volver svg {
+    stroke: var(--azul-bolso);
+}
+
+.boton-volver:hover svg {
+    stroke: var(--rojo-bolso);
+}
+
+/*estilo celular*/
+@media (max-width: 770px){
+    .boton-volver{
+        display: flex;
+    }
+    aside{
+        display: flex;
+        width: 100%;
+    }
+
+    #BolsoChat{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin-top: 0;
+        border: none;
+    }
+
+    #pantalla-bienvenida,
+    #chat-activo {
+        display: none;
+    }
+    #principal.mostrar-detalle aside{
+        display:none;
+    }
+    #principal.mostrar-detalle #chat-activo{
+        display: flex;
+        width: 100%;
+    }
+    #principal.mostrar-detalle #pantalla-bienvenida {
+        display: none;
+    }
+    
+}
+
+#principal.chat-seleccionado #pantalla-bienvenida{
+    display:none;
+}
+#principal.chat-seleccionado #chat-activo{
+    display: flex;
 }

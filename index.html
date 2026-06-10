@@ -14,7 +14,6 @@
         <!--izquierda, la columna de los contactos -->
         <aside>
             <header>BolsoChat</header>
-            <input type="text" placeholder="Buscar">
             <div id="chats">
                 <div class="chat">
                     <img src="" alt="">
@@ -40,6 +39,11 @@
         <main id="chat-activo">
             <header>
                 <div class="encabezado">
+                    <button class="boton-volver">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
                     <img src="" alt="">
                     <h3>Nombre</h3>
                 </div>
@@ -53,7 +57,9 @@
             <div id="input">
                 <input type="file" id="imagen-selector" accept="image/*" style="display: none;">
                 <label for="imagen-selector" class="upload-btn">
-                    📎
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                </svg>
                 </label>
                 <input id="mensaje_input" type="text" placeholder="Escribe un mensaje...">
                 <button id="enviar_btn">Enviar</button>
