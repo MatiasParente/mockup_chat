@@ -3,6 +3,17 @@
 //pero deja que el resto de la pagina siga funcionando.
 
 const url = 'https://max-fernandez-utec.github.io/2026/papuchat';
+const fotosJugadores = {
+    "juanperez_1233": "resources/hugo.jpg",
+    "marialopez_4567": "resources/atilio.jpg",
+    "anagomez_7890": "resources/coates.jpeg",
+    "carlosrodriguez_1122": "resources/maxi.jpeg",
+    "lauragarcia_3344": "resources/recoba.jpeg"
+};
+
+function obtenerFotoPerfil(idContacto){
+    return fotosJugadores[idContacto] || 'resources/logo_letras_Nacional.png';
+}
 
 function formatearFecha(fecha){
     if(!fecha) return '';
@@ -26,7 +37,7 @@ function formatearFecha(fecha){
 
 //creamos un componente para tener la parte del html a modificar
 function ParteChat(conversacion){
-    const fotoPerfil = 'resources/logo_letras_Nacional.png'; 
+    const fotoPerfil = obtenerFotoPerfil(conversacion.idContacto); 
     
     const fechaFormateada = formatearFecha(conversacion.fechaUltMensaje);
     return `
@@ -42,7 +53,7 @@ function ParteChat(conversacion){
 }
 
 function ParteChatMensajes(conversacion){
-    const fotoPerfil = 'resources/logo_letras_Nacional.png'; 
+    const fotoPerfil = obtenerFotoPerfil(conversacion.idContacto); 
 
     return `
         <header>

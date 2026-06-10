@@ -26,6 +26,49 @@ body {
     color: var(--texto-oscuro);
     height: 100vh;
     overflow: hidden;
+    background-image: url('resources/fondo.png');         
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.sticker {
+    position: absolute; /* esta es para que pueda ubicar el sticker donde yo quiera */
+    z-index: 1; /* hace que el sticker este encima de todo*/
+    transition: transform 0.3s ease; /* hace que el sticker tenga una transicion cuando cambie el tamaño*/
+}
+
+.sticker-atilio {
+    bottom: 7%;
+    left: 1%;
+    width: 140px;      
+    transform: rotate(-10deg); 
+}
+
+.sticker-libertadores {
+    top: 15%;
+    left: 0%;
+    width: 200px;       
+    transform: rotate(5deg);  
+}
+
+.sticker-intercontinental{
+    bottom: 10%;
+    right: 2%;
+    width: 150px;
+    transform: rotate(-8deg);
+}
+
+.sticker-suarez {
+    top: 20%; /* posiscion arriba */
+    right: 1%; /* posiscion derecha */
+    width: 200px; /* tamaño */
+    transform: rotate(-8deg); /*para que gire*/
+}
+
+.sticker:hover {
+    transform: scale(1.1) rotate(0deg); 
+    cursor: pointer;
 }
 
 #titulo{
@@ -36,19 +79,72 @@ body {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    color: var(--azul-bolso);
-    background-color: var(--blanco);
-    border-bottom: 1px solid var(--gris-suave);
+    background-color: var(--gris-suave);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: rgba(233, 236, 239, 0.75); /* se usa gris suave pero al 75% de opacidad */
+    transition: background-color 0.3s ease;
 }
 
-#BolsoChat{
+#decano{
+    margin-left: 200px;
+    margin-right: 20px;
+    color: var(--azul-bolso);
+    opacity: 0.7;
+    filter: brightness(0.9);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+#rey {
+    margin-right: 50px;
+    margin-left: 10px;
+    color: var(--rojo-bolso);
+    opacity: 0.7;
+    filter: brightness(0.9);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+#BolsoChat {
     display: flex;
     height: 80vh;
     width: 75%;
     margin: 0 auto;
-    border: 2px solid var(--azul-bolso);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     justify-content: center;
     margin-top: 30px;
+    overflow: hidden; 
+}
+
+#logo-titulo{
+    width: 130px;
+    height: 90px;
+    margin-right: 10px;
+    margin-top: 30px; 
+}
+
+#logo-titulo:hover{
+    transform: scale(1.2);    
+}
+
+#bolso-chat-titulo{
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#bolso-chat-titulo:hover{
+    transform: scale(1.2);
+}
+
+#titulo:hover {
+    background-color: rgba(233, 236, 239, 0.95);
+}
+
+#titulo:hover #decano,
+#titulo:hover #rey {
+    opacity: 1;
+    filter: brightness(1);
 }
 
 #pantalla-bienvenida {
@@ -57,6 +153,14 @@ body {
     justify-content: center;
     align-items: center;
     flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-image: url('resources/uruguayo2025.PNG');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4); /* Capa oscura al 40% de opacidad */
+    background-blend-mode: overlay;
 }
 
 /* Contenedor principal, # para una id en especifico */
@@ -70,7 +174,6 @@ body {
 aside {
     width: 350px; /*ancho de la columna */
     background-color: var(--blanco); /* Color de fondo */
-    border-right: 1px solid var(--gris-suave); /* Borde derecho */
     display: flex; /* es un flexbox para que se acomode cuando luego lo haga responsive, o para que acomode lo de adentro */
     flex-direction: column; /* y por ultimo hace que se acomoden en forma de columna */
 }
@@ -81,19 +184,40 @@ aside {
     flex: 1; /* Ocupa todo el espacio restante al lado del aside */
     background-color: var(--gris-fondo); 
     flex-direction: column;
+    background-image: url('resources/logo_letras_Nacional.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-color: var(--gris-fondo);
+    background-blend-mode: overlay;
 }
 
 /* . para clases, todos los que compartan la clase toman este diseño */
 .contenido-bienvenida img{
     max-width: 200px; /* ancho maximo */
     margin-bottom: 20px; /* margen abajo */
-    
+    opacity: 0.9; /* 10% de opacidad para volverlo un poco mas trasparente */
+    filter: brightness(0.9); /* Lo oscurece un 10% para que el blanco sea muy fuerte */
 }
 
-.contenido-bienvenida h2{
-    font-size: 24px;
+.contenido-bienvenida p{
+    font-size: 20px;
     margin-bottom: 10px;
-    color: var(--azul-bolso);
+    color: var(--blanco);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para que resalten */
+    opacity: 0.8;
+    filter: brightness(0.9);
+}
+
+.contenido-bienvenida p:hover {
+    opacity: 1;
+    filter: brightness(1);
+    transition: opacity 0.3s ease; 
+}
+.contenido-bienvenida img:hover {
+    opacity: 1;
+    filter: brightness(1);
+    transition: opacity 0.3s ease;   
 }
 
 #ultMensaje{
@@ -121,10 +245,19 @@ aside {
 aside header {
     background-color: var(--azul-bolso); /* Color de fondo */
     color: var(--blanco); /* Color de la letra */
-    padding: 23px;
-    font-size: 18px;
     font-weight: bold; /* negrita */
     text-align: center; /* centrado */
+    justify-content: center;
+    display: flex; /* para que tenga los elementos en una linea*/
+    align-items: center; /* para que los elementos se centren verticalmente*/
+}
+
+#logo-bienvenida{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    
 }
 /*
 aside input[type="text"]{
@@ -178,7 +311,7 @@ aside input[type="text"]{
 
 main header {
     background-color: var(--blanco);
-    padding: 15px;
+    padding: 10px;
     border-bottom: 1px solid var(--gris-suave);
     display: flex;
     align-items: center;
@@ -304,6 +437,33 @@ main header {
     stroke: var(--rojo-bolso);
 }
 
+/*Estilos para el footer*/
+#pie-de-pagina {
+    text-align: center; 
+    padding: 20px 0; 
+    color: var(--blanco); 
+    font-size: 14px; 
+    opacity: 0.8;
+    filter: brightness(0.9);
+}
+
+#pie-de-pagina:hover {
+    opacity: 1;
+    filter: brightness(1);
+    transition: opacity 0.3s ease;   
+}
+
+#titulo:hover {
+    opacity: 1;
+    filter: brightness(1);
+    transition: opacity 0.3s ease;   
+}
+#logo-titulo:hover {
+    opacity: 1;
+    filter: brightness(1);
+    transition: opacity 0.3s ease;   
+}
+
 /*estilo celular*/
 @media (max-width: 770px){
     .boton-volver{
@@ -320,6 +480,16 @@ main header {
         display: flex;
         margin-top: 0;
         border: none;
+    }
+
+    #titulo{
+        display: none;
+    }
+    .sticker{
+        display: none;
+    }
+    #pie-de-pagina{
+        display: none;
     }
 
     #pantalla-bienvenida,
